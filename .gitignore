@@ -1,5 +1,8 @@
 pkg
 bin
+log
 src/github.com
 src/golang.org
 .DS_Store
+node_modules
+package-lock.json
