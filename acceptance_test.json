@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "a50e5b53-5c07-4052-8f6e-eb243fafbbe6",
+		"name": "user ส่ง message สอบถามรายละเอียดหอพัก และ ได้รับ message ตอบกลับ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9000/chatbot/api/message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ea1be5f-e614-48eb-83d2-e2bc17fe96a9",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"message should be ละออเพลส,เรือนสุดสุข,ละอ่อน\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.message).to.eql(\"ละออเพลส,เรือนสุดสุข,ละอ่อน\");",
+							"});",
+							"",
+							"pm.test(\"timestamp should be 2018-08-12T 03:59:59.855Z\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.timestamp).to.eql(\"2018-08-12T 03:59:59.855Z\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_id",
+							"value": "1234",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "หอพักย่านลาดพร้าวซอย1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "timestamp",
+							"value": "2018-08-12T 03:59:58.855Z",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/chatbot/api/message",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"chatbot",
+						"api",
+						"message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
