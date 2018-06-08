@@ -1,3 +1,3 @@
 #!/bin/bash
-mkdir -p pkg bin
+mkdir -p pkg bin log
 npm install newman
