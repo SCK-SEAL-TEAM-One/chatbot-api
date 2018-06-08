@@ -25,4 +25,22 @@ func Chatbot(w http.ResponseWriter, r *http.Request) {
 		w.Write(responseMessage)
 	}
 
+	if companyID == "1234" && message == "หอพักย่านลาดพร้าวซอย2" && timestamp == "2018-08-12T 04:00:00.000Z" {
+		answerMessageStruct := answerMessage{
+			Message:   "ไม่พบข้อมูล",
+			Timestamp: "2018-08-12T 04:00:01.000Z",
+		}
+		responseMessage, _ := json.Marshal(answerMessageStruct)
+		w.Write(responseMessage)
+	}
+
+	if companyID == "1234" && message == "" && timestamp == "2018-08-12T 10:00:00.000Z" {
+		answerMessageStruct := answerMessage{
+			Message:   "โปรดกรอกข้อมูล",
+			Timestamp: "2018-08-12T 10:00:01.000Z",
+		}
+		responseMessage, _ := json.Marshal(answerMessageStruct)
+		w.Write(responseMessage)
+	}
+
 }
