@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "3cca3582-ec4a-4f4e-962d-6a744da1bd7e",
+		"name": "chatbot acceptance test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9000/chatbot/api/message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1244accc-424f-44a7-b4e0-139a285b43f2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"message should be ไม่พบข้อมูล\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.message).to.eql(\"ไม่พบข้อมูล\");",
+							"});",
+							"",
+							"pm.test(\"timestamp should be 2018-08-12T 04:00:01.000Z\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.timestamp).to.eql(\"2018-08-12T 04:00:01.000Z\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_id",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "หอพักย่านลาดพร้าวซอย2",
+							"type": "text"
+						},
+						{
+							"key": "timestamp",
+							"value": "2018-08-12T 04:00:00.000Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/chatbot/api/message",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"chatbot",
+						"api",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/chatbot/api/message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3d07c1b-b278-4b50-9ae7-3163301a2954",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"message should be โปรดกรอกข้อมูล\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.message).to.eql(\"โปรดกรอกข้อมูล\");",
+							"});",
+							"",
+							"pm.test(\"timestamp should be 2018-08-12T 10:00:01.000Z\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.timestamp).to.eql(\"2018-08-12T 10:00:01.000Z\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_id",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "timestamp",
+							"value": "2018-08-12T 10:00:00.000Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/chatbot/api/message",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"chatbot",
+						"api",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/chatbot/api/message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1244accc-424f-44a7-b4e0-139a285b43f2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"message should be ไม่พบข้อมูล\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.message).to.eql(\"ไม่พบข้อมูล\");",
+							"});",
+							"",
+							"pm.test(\"timestamp should be 2018-08-12T 04:00:01.000Z\", function() {",
+							"    var response_message = pm.response.json();",
+							"    pm.expect(response_message.timestamp).to.eql(\"2018-08-12T 04:00:01.000Z\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_id",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "หอพักย่านลาดพร้าวซอย2",
+							"type": "text"
+						},
+						{
+							"key": "timestamp",
+							"value": "2018-08-12T 04:00:00.000Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/chatbot/api/message",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"chatbot",
+						"api",
+						"message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
